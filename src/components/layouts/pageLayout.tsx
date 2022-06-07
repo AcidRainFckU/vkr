@@ -12,11 +12,11 @@ const PageLayout: FC<PropsWithChildren<Props>> = ({ children }) => {
   }
 
   return (
-    <div className="page">
+    <div className="page min-h-screen">
       <header className="header">
         <Header />
       </header>
-      <div className="container mx-auto">{children}</div>
+      <div className="container h-full mx-auto">{children}</div>
     </div>
   );
 };

@@ -44,7 +44,7 @@ const AdminPanel: FC<Props> = ({ children, currentTab }) => {
                 </Link>
 
                 <Link
-                  to="/admin/cources"
+                  to="/admin/course"
                   className={
                     currentTab === 2
                       ? `flex items-center p-4 bg-white rounded-lg shadow-xs cursor-pointer  border-indigo-500 border-2`

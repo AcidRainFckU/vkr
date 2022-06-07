@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import useAuth from "../../../hooks/auth";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { setAdminUsersAction } from "../../../redux/admin/users-admin.actions";
+import useAuth from "../../../../hooks/auth";
+import { useAppSelector } from "../../../../hooks/useAppSelector";
+import { setAdminUsersAction } from "../../../../redux/admin/users-admin.actions";
 import AdminUserComponent from "./AdminUserComponent";
-import SerchFrom from "./SerchFrom";
+import SerchFrom from "../SerchFrom";
 
-type Props = {};
-
-const AdminUsers = (props: Props) => {
+const AdminUsers = () => {
   const [filters, setFilters] = useState({
     userName: "",
     status: 0,
@@ -47,6 +45,8 @@ const AdminUsers = (props: Props) => {
               <th className="px-4 py-3">Статус</th>
               <th className="px-4 py-3 text-center">Действия</th>
             </tr>
+          </thead>
+          <tbody className="bg-white divide-y ">
             {users?.map((el) => (
               <AdminUserComponent
                 key={el.id}
@@ -57,8 +57,7 @@ const AdminUsers = (props: Props) => {
                 email={el.email}
               />
             ))}
-          </thead>
-          <tbody className="bg-white divide-y "></tbody>
+          </tbody>
         </table>
       </div>
     </div>

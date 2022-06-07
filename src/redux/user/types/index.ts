@@ -1,3 +1,5 @@
+import { Course } from "../../course/types";
+
 export enum UserEnum {
   SET_USER = "SET_USER",
   LOGOUT = "LOGOUT",
@@ -30,4 +32,6 @@ export interface User {
   userName: string;
   role: string;
   banned: boolean;
+  course: any;
+  homeworks: any;
 }

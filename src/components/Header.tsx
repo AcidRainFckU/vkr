@@ -14,8 +14,7 @@ const Header: FC<Props> = (props: Props) => {
   return (
     <nav className="navbar container flex justify-between py-8 mx-auto bg-white">
       <div className="items-center hidden space-x-8 lg:flex">
-        <NavLink to="Категории">Справочник</NavLink>
-        <NavLink to="Курсы">Курсы</NavLink>
+        <NavLink to="/courses">Главная</NavLink>
         {user?.role === "superuser" && (
           <NavLink
             to="/admin"
@@ -24,14 +23,34 @@ const Header: FC<Props> = (props: Props) => {
             Панель администратора
           </NavLink>
         )}
+        {user?.role !== "student" && (
+          <NavLink
+            to="/homeworks"
+            className={"bg-red-600 text-white p-3 rounded-full"}
+          >
+            Домашние задания
+          </NavLink>
+        )}
       </div>
       <div className="flex items-center space-x2">
-        <NavLink
-          to="/profile"
-          className="p-2 rounded-full bg-blue-50 w-10 text-center"
-        >
-          {user?.userName[0].toUpperCase()}
-        </NavLink>
+        <div className="header__profile flex mr-8 cursor-default">
+          <div className="p-2 rounded-full bg-blue-50 w-12 text-center mr-3 cursor-default">
+            {user?.userName[0].toUpperCase()}
+          </div>
+          <div className="header__profile-info">
+            <h6>{user?.userName}</h6>
+            <h5 className="text-sm">
+              Роль:{" "}
+              <span>
+                {user?.role === "superuser"
+                  ? "Создатель"
+                  : user?.role === "mentor"
+                  ? "Ментор"
+                  : "Студент"}
+              </span>
+            </h5>
+          </div>
+        </div>
 
         <div className="settings  mx-2 relative h-full flex items-center">
           <button className="settings__activate">

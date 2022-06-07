@@ -4,4 +4,6 @@ export interface IUser {
   userName: string;
   role: string;
   banned: boolean;
+  course: any;
+  homeworks: any;
 }

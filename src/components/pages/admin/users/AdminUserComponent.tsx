@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   banUsersAction,
   setRoleAction,
-} from "../../../redux/admin/users-admin.actions";
+} from "../../../../redux/admin/users-admin.actions";
 
 type Props = {
   id: number;
