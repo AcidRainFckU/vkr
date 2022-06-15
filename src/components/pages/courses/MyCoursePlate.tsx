@@ -19,7 +19,7 @@ const MyCoursePlate: FC<Props> = ({ id, title, UserCourse, course }) => {
       onClick={() => navigate(`/courses/${id}`)}
     >
       <div className="languages flex mb-3">
-        <div className="language drop-shadow-md text-xs font-bold bg-white rounded-2xl pl-4 pr-2 py-1">
+        <div className="language drop-shadow-md text-xs font-bold bg-white rounded-2xl px-3 mr-4 py-1">
           JavaScript
         </div>
       </div>

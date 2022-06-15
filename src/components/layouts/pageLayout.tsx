@@ -1,7 +1,7 @@
-import React, { FC, PropsWithChildren } from "react";
-import { Navigate } from "react-router-dom";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import Header from "../Header";
+import React, { FC, PropsWithChildren } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import Header from '../Header';
 
 type Props = {};
 

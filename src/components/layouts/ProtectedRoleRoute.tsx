@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Navigate } from "react-router-dom";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { User } from "../../redux/user/types";
+import { FC } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { User } from '../../redux/user/types';
 
 interface Props {
   redirectPath?: string;
@@ -9,11 +9,7 @@ interface Props {
   children: JSX.Element;
 }
 
-const ProtectedRoute: FC<Props> = ({
-  redirectPath = "/",
-  condition,
-  children,
-}) => {
+const ProtectedRoute: FC<Props> = ({ redirectPath = '/', condition, children }) => {
   const user: User = useAppSelector((store) => store.user);
 
   if (user) {

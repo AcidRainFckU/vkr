@@ -1,14 +1,14 @@
-import { FC, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import useAuth from "../../hooks/auth";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { FC, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import useAuth from '../../hooks/auth';
+import { useAppSelector } from '../../hooks/useAppSelector';
 
 type Props = {};
 
 const Login: FC<Props> = () => {
   const user = useAppSelector((store) => store.user);
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const { login } = useAuth();
 
@@ -18,7 +18,7 @@ const Login: FC<Props> = () => {
   };
 
   if (user) {
-    return <Navigate to="/profile" replace />;
+    return <Navigate to="/courses" replace />;
   }
 
   return (
@@ -27,17 +27,11 @@ const Login: FC<Props> = () => {
         <div
           className="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
            px-6 py-10 sm:px-10 sm:py-6 
-           bg-white rounded-lg shadow-md lg:shadow-lg"
-        >
-          <h2 className="text-center font-semibold text-3xl lg:text-4xl text-indigo-600">
-            Логин
-          </h2>
+           bg-white rounded-lg shadow-md lg:shadow-lg">
+          <h2 className="text-center font-semibold text-3xl lg:text-4xl text-indigo-600">Логин</h2>
 
           <form className="mt-10" onSubmit={(e) => onSubmit(e)}>
-            <label
-              htmlFor="email"
-              className="block text-xs font-semibold text-gray-600 uppercase"
-            >
+            <label htmlFor="email" className="block text-xs font-semibold text-gray-600 uppercase">
               E-mail
             </label>
             <input
@@ -56,8 +50,7 @@ const Login: FC<Props> = () => {
 
             <label
               htmlFor="password"
-              className="block mt-2 text-xs font-semibold text-gray-600 uppercase"
-            >
+              className="block mt-2 text-xs font-semibold text-gray-600 uppercase">
               Пароль
             </label>
             <input
@@ -78,8 +71,7 @@ const Login: FC<Props> = () => {
               type="submit"
               className="w-full py-3 mt-10 bg-indigo-600 rounded-sm
                    font-medium text-white uppercase
-                   focus:outline-none hover:bg-indigo-500 hover:shadow-none"
-            >
+                   focus:outline-none hover:bg-indigo-500 hover:shadow-none">
               Войти
             </button>
 

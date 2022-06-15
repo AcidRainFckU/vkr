@@ -1,5 +1,13 @@
 import $api from "../http";
 
+type CreateLesson = {
+  title: string;
+  text: string;
+  chaptereId: number;
+  courseId: number;
+  homework: boolean;
+};
+
 export default class CoruseService {
   static async getAllCourses() {
     return $api.get("/course");
@@ -26,5 +34,14 @@ export default class CoruseService {
   }
   static async createCourse(title: string, language: number) {
     return $api.post("course/create", { title, language });
+  }
+  static async createChapter(title: string, courseId: number) {
+    return $api.post("chapter/create", { title, courseId });
+  }
+  static async createLesson(createLesson: CreateLesson) {
+    return $api.post("lesson/create", createLesson);
+  }
+  static async createLanguage(name: string) {
+    return $api.post("language/create", { name });
   }
 }

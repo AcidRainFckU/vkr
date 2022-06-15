@@ -44,13 +44,13 @@
   border: none;
   &::before,
   &::after {
-    content: "";
+    content: '';
     border-radius: 9999px;
     position: absolute;
   }
   &::before {
-    background: radial-gradient(farthest-side, currentColor 98%, #0000)
-        top/var(--thickness) var(--thickness) no-repeat,
+    background: radial-gradient(farthest-side, currentColor 98%, #0000) top/var(--thickness)
+        var(--thickness) no-repeat,
       conic-gradient(currentColor calc(var(--value) * 1%), #0000 0);
     -webkit-mask: radial-gradient(
       farthest-side,
@@ -70,8 +70,7 @@
     inset: 0;
   }
   &::after {
-    transform: rotate(calc(var(--value) * 3.6deg - 90deg))
-      translate(calc(var(--size) / 2 - 57%));
+    transform: rotate(calc(var(--value) * 3.6deg - 90deg)) translate(calc(var(--size) / 2 - 57%));
     inset: calc(50% - var(--thickness) / 2);
     background-color: currentColor;
   }
@@ -83,4 +82,28 @@
 
 .adduser__icon {
   max-width: 48px;
+}
+
+.header__chaptre {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .chapter__title {
+    margin-right: 15px;
+  }
+  .strelka-bottom-1 {
+    width: 18px;
+    margin-left: auto;
+  }
+}
+
+.collapse {
+  overflow: hidden;
+  li {
+  }
+}
+
+.modal {
+  .course__users {
+  }
 }
