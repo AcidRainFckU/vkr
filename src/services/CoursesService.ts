@@ -19,8 +19,9 @@ export default class CoruseService {
     return $api.post("course/remove-user", { userId, courseId });
   }
 
-  static async addHomework(userId: number, lessonId: number, link: string) {
-    return $api.post("/homework", { userId, lessonId, link });
+  static async addHomework(homework: any) {
+    console.log(homework)
+    return $api.post("/homework",  homework );
   }
 
   static async getHomework() {
@@ -43,5 +44,8 @@ export default class CoruseService {
   }
   static async createLanguage(name: string) {
     return $api.post("language/create", { name });
+  }
+  static async deleteCourse(userId: number, courseId: number) {
+    return $api.post("/course/delete", { userId,  courseId});
   }
 }

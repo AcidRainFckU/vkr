@@ -51,3 +51,20 @@ export const removeUserAction: any =
       console.log(e);
     }
   };
+
+export const dropCourseAction: any =
+  (userId: number, courseId: number) =>
+  async (dispatch: Dispatch<CourseActionsType>) => {
+    try {
+      const response = await CoruseService.deleteCourse(userId, courseId);
+      if(response.data === 1){
+        dispatch({
+          type: CoursesEnum.REMOVE_COURSE,
+          payload: courseId
+        });
+      }
+      
+    } catch (e) {
+      console.log(e);
+    }
+  };

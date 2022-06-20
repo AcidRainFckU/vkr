@@ -1,7 +1,6 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Lesson } from '../../../redux/course/types';
-import CoruseService from '../../../services/CoursesService';
 
 type Props = {
   title: string;
@@ -13,13 +12,26 @@ type Props = {
 
 const ChapterComponent: FC<Props> = ({ title, id, lessons, courseId, role }) => {
   const [openChapter, setOpenChapter] = useState(false);
+  const [fileteredLesson, setFilteredLesson] = useState<Lesson[]>([]);
 
   const currentLessons = lessons.filter((el) => el.chaptereId === id).reverse();
 
+  useEffect(() => {
+    function sortByAge(arr: any) {
+      arr?.sort((a: any, b: any) => (a.id > b.id ? 1 : -1));
+      return arr;
+    }
+    const arr = sortByAge(currentLessons);
+    setFilteredLesson(arr);
+  }, []);
+
   return (
     <li className="relative mb-4">
-      <div className="header__chaptre" onClick={() => setOpenChapter(!openChapter)}>
-        <h3 className="mb-2 chapter__title">{title}</h3>
+      <div
+        style={openChapter ? { borderRadius: '15px 15px 0 0' } : { borderRadius: '15px' }}
+        className="header__chaptre "
+        onClick={() => setOpenChapter(!openChapter)}>
+        <h3 className="mb-2 text-xl chapter__title">{title}</h3>
         {role === 'superuser' && (
           <div className="buttons">
             <Link
@@ -32,7 +44,7 @@ const ChapterComponent: FC<Props> = ({ title, id, lessons, courseId, role }) => 
         <svg
           className="strelka-bottom-1"
           viewBox="0 0 60 100"
-          style={openChapter ? { transform: 'rotate(-180deg)' } : { transform: 'rotate(-90deg)' }}>
+          style={openChapter ? { transform: 'rotate(90deg)' } : { transform: 'rotate(-90deg)' }}>
           <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z"></path>
         </svg>
       </div>
@@ -41,11 +53,11 @@ const ChapterComponent: FC<Props> = ({ title, id, lessons, courseId, role }) => 
         className="relative accordion-collapse collapse"
         id="collapseSidenavEx1"
         style={openChapter ? { height: '100%' } : { height: '0' }}>
-        {currentLessons.map((el) => (
+        {fileteredLesson.map((el) => (
           <li key={el.id} className="relative">
             <Link
               to={`/courses/${courseId}/${el.chaptereId}/${el.id}`}
-              className="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
+              className="flex items-center  py-4  pr-6 h-6 overflow-hidden text-base text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
               {el.title}
             </Link>
           </li>

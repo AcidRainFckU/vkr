@@ -29,6 +29,9 @@ function coursesReducer(state = initialState, action: CourseActionsType) {
           return el;
         }
       });
+    case "REMOVE_COURSE": 
+      const newArr = state?.filter(el => el.id !== action.payload)
+      return newArr
     default:
       return state;
   }

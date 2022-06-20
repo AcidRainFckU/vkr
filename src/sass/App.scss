@@ -40,7 +40,7 @@
   display: inline-grid;
   position: relative;
 
-  color: rgb(79 70 229);
+  color: rgb(79, 70, 229);
   border: none;
   &::before,
   &::after {
@@ -105,5 +105,96 @@
 
 .modal {
   .course__users {
+  }
+}
+
+.create-lesson-header {
+  max-width: 650px;
+  width: 100%;
+  margin: auto;
+}
+
+.paragraph {
+  &__h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  &__text {
+    font-size: 18px;
+  }
+  &__table {
+    th {
+      font-weight: bold;
+      padding: 5px;
+      background: #efefef;
+      border: 1px solid #dddddd;
+    }
+    td {
+      border: 1px solid #dddddd;
+      padding: 5px;
+    }
+  }
+
+  &__list {
+    padding-left: 20px;
+    li {
+      list-style-type: disc;
+      font-size: 18px;
+    }
+  }
+  &__code {
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 10px;
+    background: #2b2b2b;
+    .title {
+      color: #fff;
+    }
+    .codeInnter {
+      margin-top: 15px;
+    }
+  }
+  &__html {
+    & > div {
+      overflow: hidden;
+      padding: 15px;
+
+      .title {
+        font-weight: 600;
+      }
+      .codeInnter {
+        margin-top: 15px;
+      }
+    }
+    .innerFalse {
+      border-radius: 10px 0 0 10px;
+      background: #2b2b2b;
+      .title {
+        color: #fff;
+      }
+    }
+    .innerTrue {
+      border-radius: 0 10px 10px 0;
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+  }
+}
+
+.header__chaptre {
+  transition: 0.2s;
+  background-color: #efefef;
+  padding: 10px 15px;
+}
+
+.accordion-collapse {
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  padding: 0 40px;
+  li {
+    list-style-type: decimal;
   }
 }

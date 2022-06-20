@@ -1,0 +1,188 @@
+.settings__activate:focus + .settings__list {
+  max-height: 100px;
+}
+
+.settings__list {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s linear;
+  transition: max-height 0.3s linear;
+  top: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
+  width: 100px;
+}
+
+.set-role__button:focus + .set-role__buttons {
+  display: block;
+}
+
+.radial-progress {
+  height: var(--size);
+  width: var(--size);
+  vertical-align: middle;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  --value: 0;
+  --size: 5rem;
+  --thickness: calc(var(--size) / 10);
+  border-radius: 9999px;
+  place-content: center;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  position: relative;
+  color: #4f46e5;
+  border: none;
+}
+
+.radial-progress::before, .radial-progress::after {
+  content: '';
+  border-radius: 9999px;
+  position: absolute;
+}
+
+.radial-progress::before {
+  background: radial-gradient(farthest-side, currentColor 98%, #0000) top/var(--thickness) var(--thickness) no-repeat, conic-gradient(currentColor calc(var(--value) * 1%), #0000 0);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--thickness)), #000 calc(100% - var(--thickness)));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--thickness)), #000 calc(100% - var(--thickness)));
+  mask: radial-gradient(farthest-side, #0000 calc(99% - var(--thickness)), #000 calc(100% - var(--thickness)));
+  inset: 0;
+}
+
+.radial-progress::after {
+  -webkit-transform: rotate(calc(var(--value) * 3.6deg - 90deg)) translate(calc(var(--size) / 2 - 57%));
+          transform: rotate(calc(var(--value) * 3.6deg - 90deg)) translate(calc(var(--size) / 2 - 57%));
+  inset: calc(50% - var(--thickness) / 2);
+  background-color: currentColor;
+}
+
+.adduser-button {
+  max-width: 97px;
+}
+
+.adduser__icon {
+  max-width: 48px;
+}
+
+.header__chaptre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.header__chaptre .chapter__title {
+  margin-right: 15px;
+}
+
+.header__chaptre .strelka-bottom-1 {
+  width: 18px;
+  margin-left: auto;
+}
+
+.collapse {
+  overflow: hidden;
+}
+
+.create-lesson-header {
+  max-width: 650px;
+  width: 100%;
+  margin: auto;
+}
+
+.paragraph__h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.paragraph__text {
+  font-size: 18px;
+}
+
+.paragraph__table th {
+  font-weight: bold;
+  padding: 5px;
+  background: #efefef;
+  border: 1px solid #dddddd;
+}
+
+.paragraph__table td {
+  border: 1px solid #dddddd;
+  padding: 5px;
+}
+
+.paragraph__list {
+  padding-left: 20px;
+}
+
+.paragraph__list li {
+  list-style-type: disc;
+  font-size: 18px;
+}
+
+.paragraph__code {
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 10px;
+  background: #2b2b2b;
+}
+
+.paragraph__code .title {
+  color: #fff;
+}
+
+.paragraph__code .codeInnter {
+  margin-top: 15px;
+}
+
+.paragraph__html > div {
+  overflow: hidden;
+  padding: 15px;
+}
+
+.paragraph__html > div .title {
+  font-weight: 600;
+}
+
+.paragraph__html > div .codeInnter {
+  margin-top: 15px;
+}
+
+.paragraph__html .innerFalse {
+  border-radius: 10px 0 0 10px;
+  background: #2b2b2b;
+}
+
+.paragraph__html .innerFalse .title {
+  color: #fff;
+}
+
+.paragraph__html .innerTrue {
+  border-radius: 0 10px 10px 0;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.header__chaptre {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #efefef;
+  padding: 10px 15px;
+}
+
+.accordion-collapse {
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  padding: 0 40px;
+}
+
+.accordion-collapse li {
+  list-style-type: decimal;
+}
+/*# sourceMappingURL=App.css.map */

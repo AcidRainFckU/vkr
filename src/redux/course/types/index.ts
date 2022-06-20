@@ -4,6 +4,7 @@ export enum CoursesEnum {
   SET_COURSES = "SET_COURSES",
   ADD_USER = "ADD_USER",
   REMOVE_USER = "REMOVE_USER",
+  REMOVE_COURSE = "REMOVE_COURSE",
 }
 
 interface SetCoursesActionType {
@@ -18,7 +19,12 @@ interface AddUserActionType {
   };
 }
 
-export type CourseActionsType = SetCoursesActionType | AddUserActionType;
+interface RemoveCourseActionType {
+  type: CoursesEnum.REMOVE_COURSE
+  payload: number 
+}
+
+export type CourseActionsType = SetCoursesActionType | AddUserActionType | RemoveCourseActionType;
 
 export interface Lesson {
   id: number;
